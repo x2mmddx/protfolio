@@ -10,7 +10,34 @@ function typingEffect() {
 }
 typingEffect();
 
+const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav-links");
+  const navLinks = document.querySelectorAll(".nav-links li a");
+  const sections = document.querySelectorAll("section");
 
+  // فتح/قفل المنيو
+  toggle.addEventListener("click", () => nav.classList.toggle("active"));
+
+  // قفل المنيو بعد الضغط على لينك
+  navLinks.forEach(link => link.addEventListener("click", () => nav.classList.remove("active")));
+
+  // Scroll spy
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const top = section.offsetTop - 70;
+      const height = section.clientHeight;
+      if (scrollY >= top && scrollY < top + height) current = section.id;
+    });
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(current)) link.classList.add("active");
+    });
+
+    // Navbar background change
+    document.querySelector(".navbar")
+      .classList.toggle("scrolled", window.scrollY > 50);
+  });
 
 // ===== Scroll Animation =====
 const hiddenElements = document.querySelectorAll(".hidden");
@@ -25,7 +52,6 @@ hiddenElements.forEach((el) => observer.observe(el));
 
 // ===== Mobile Navbar Toggle =====
 const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.querySelector(".nav-links");
 
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
@@ -63,4 +89,42 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
     // قفل المنيو في الموبايل بعد الضغط
     navLinks.classList.remove("active");
   });
+  // فتح / قفل المنيو في الموبايل
+const toggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav-links");
+const navLinks = document.querySelectorAll(".nav-links li a");
+const sections = document.querySelectorAll("section");
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+
+  // قفل المينيو بعد الضغط على لينك (في الموبايل بس)
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+    });
+  });
+
+  // Scroll Spy (يحدد الـ active اثناء التمرير)
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 70; // علشان الـ navbar ثابت
+      const sectionHeight = section.clientHeight;
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(current)) {
+        link.classList.add("active");
+      }
+    });
+  });
 });
+
