@@ -4,30 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mahmoud Aziz | Portfolio</title>
-  <link class="logo" rel="icon" href="logo2.png" type="image/x-icon">
+  <link class="logo" rel="icon" href="src/logo2.png" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <!-- Icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar transparent" id="navbar">
-    <div class="logo"><img src="logo2.png" alt="Mahmoud Logo" class="logo-img" height="50px" width="50px">
+    <div class="logo"><img src="src/logo2.png" alt="Mahmoud Logo" class="logo-img" height="50px" width="50px">
     </div>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#hero">Home</a></li>
+      <li><a href="#home" class="active">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="menu-toggle" id="menu-toggle">
-      <i class="fas fa-bars"></i>
+    <div class="menu-toggle" id="menu-toggle">☰
       
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero" id="hero">
+  <section class="hero" id="home">
     <div class="hero-left">
       <h3>Hi, I'm</h3>
       <h1><span id="typing"></span></h1>
@@ -40,7 +41,7 @@
       </div>
     </div>
     <div class="hero-right">
-      <img src="mahmoud.png" alt="Mahmoud Aziz">
+      <img src="src/mahmoud.png" alt="Mahmoud Aziz">
       
     </div>
     
@@ -48,22 +49,22 @@
 
   <!-- About -->
   <section class="about hidden" id="about">
-    <hr>
-    <br>
-    <br>
+
     <br>
     <br>
     <h2>About Me</h2>
+     <div class="mine"> 
       <p>
         My name is Mahmoud Alaa Eldin Aziz, a 21-year-old graduate of the Faculty of Science, Zagazig University, with a specialization in Microbiology.</p> <p>From an early age, I developed a deep fascination with the sciences and a strong aspiration to pursue a medical career. </p><p>Over the years, this passion has evolved into a clear professional goal: to specialize in andrology and medical analysis.</p> <p>I am committed to continuous learning, practical training, and research, striving to bridge theoretical knowledge with hands-on expertise in order to contribute meaningfully to the advancement of healthcare and reproductive medicine.
       </p>
-    
+     </div>
+      <br><br><br><br>
+      <div class="linee">
+      </div>
   </section>
 
   <!-- Experience -->
   <section class="experience hidden" id="experience">
-    <hr>
-    <br>
     <h2>Experience</h2>
     <div class="timeline">
       <div class="container left">
@@ -107,12 +108,19 @@
   <!-- Contact -->
   <section class="contact hidden" id="contact">
     <h2>Contact Me</h2>
-    <a href="https://mail.google.com/mail/u/1/#sent?compose=VpCqJPsfxFtrddJNVTxSmCFcZxPrgDpWCPDVdBPrzdZDPJlGlXLHCXDVqmSzlCslWXqskBQ" target="_blank"> Email</a>
-    <a href="https://www.linkedin.com/in/mahmoud-alaa-924117383/" target="_blank">LinkedIn</a>
-    <a href="https://www.facebook.com/xx2mmdd" target="_blank">Facebook</a>
+    <div class="socials">
+  <a href="https://mail.google.com/mail/u/1/#sent?compose=VpCqJPsfxFtrddJNVTxSmCFcZxPrgDpWCPDVdBPrzdZDPJlGlXLHCXDVqmSzlCslWXqskBQ" target="_blank">
+    <i class="fa-solid fa-envelope"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/mahmoud-alaa-924117383/" target="_blank">
+    <i class="fa-brands fa-linkedin"></i>
+  </a>
+  <a href="https://www.facebook.com/xx2mmdd" target="_blank">
+    <i class="fa-brands fa-facebook"></i>
+  </a>
+</div>
   </section>
 
   <script src="script.js"></script>
 </body>
-
 </html>
